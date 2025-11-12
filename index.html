@@ -17,26 +17,54 @@
   <!-- ========= PORTADA ========= --> 
   <header class="hero" id="inicio">
     <div class="hero__bg">
-      <img
-        src="img/Portada de pagina.jpg"
-        alt="Mis quince años Naomy Isabella"
-        class="hero__image">
+      <img src="img/Portada de pagina.jpg"
+           alt="Mis quince años Naomy Isabella"
+           style="width:100%;height:100%;object-fit:cover;">
     </div>
 
     <div class="hero__frame"></div>
 
-    <div class="container center hero__content">
-      <p class="hero-topline">
+    <div class="container center" style="position:relative; z-index:2;">
+
+      <p style="
+        margin:0 0 .6rem;
+        font-family:'Playfair Display', serif;
+        letter-spacing:.18em;
+        text-transform:uppercase;
+        font-size:1.95rem;
+        color:#000;
+        text-shadow:0 0 6px rgba(255,255,255,.9);
+      ">
         MIS
-        <span class="hero-topline-script">Quince</span>
+        <span style="
+          font-family:'Great Vibes', cursive;
+          font-size:3.8em;
+          color:#725409;
+        ">Quince</span>
         AÑOS
       </p>
 
-      <h1 class="name hero-name">
+      <h1 class="name" style="
+        margin:.2rem 0 1.4rem;
+        color:#000;
+        text-shadow:0 0 6px rgba(255,255,255,.85);
+      ">
         Naomy Isabella
       </h1>
 
-      <p class="date hero-date-pill">
+      <p class="date" style="
+        display:inline-block;
+        margin:0 0 1.4rem;
+        padding:.35rem 1.6rem;
+        border-radius:999px;
+        background:rgba(0,0,0,.45);
+        color:#fff;
+        text-shadow:0 0 4px rgba(0,0,0,.9);
+        font-weight:600;
+        letter-spacing:.12em;
+        text-transform:uppercase;
+        font-size:.85rem;
+      ">
         10 de enero · 2:30 p.m. · Jocotenango, Sacatepéquez
       </p>
 
@@ -96,7 +124,7 @@
           <p class="count-title">Solo faltan:</p>
 
           <div class="count-content">
-            <img src="img/flores.png" alt="" class="count-flowers">
+            <img src="img/Flores.png" alt="" class="count-flowers">
 
             <div id="countdown" class="count-main">
               <span class="count-number" id="d">000</span>
@@ -328,6 +356,7 @@
       </p>
 
       <div class="dress-photo-wrap">
+        <!-- cambia la ruta por la foto que quieras usar -->
         <img src="img/Imagen circulo.jpg"
              alt="Naomy con el código de vestimenta"
              class="dress-photo">
@@ -381,4 +410,3 @@
   <script src="./script.js"></script>
 </body>
 </html>
-
