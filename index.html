@@ -11,276 +11,374 @@
 </head>
 <body>
 
-<header class="hero" id="inicio">
-  <!-- Fondo con la portada -->
-  <div class="hero__bg">
-    <img src="img/Portada de pagina.jpg"
-         alt="Mis quince años Naomy Isabella"
-         style="width:100%;height:100%;object-fit:cover;">
-  </div>
+  <!-- 🔊 AUDIO DE FONDO -->
+  <audio id="bgMusic" src="music/Chayanne, Danna Paola - Veo en ti la luz (De Enredados_Video Oficial) - DisneyMusicLAVEVO.mp3" loop></audio>
 
-  <!-- Marco dorado (ya lo estilizas en tu CSS) -->
-  <div class="hero__frame"></div>
-
-  <!-- Contenido encima de la imagen -->
-  <div class="container center" style="position:relative; z-index:2;">
-
-    <!-- MIS QUINCE AÑOS -->
-    <p style="
-      margin:0 0 .6rem;
-      font-family:'Playfair Display', serif;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      font-size:1.95rem;
-      color:#000;
-    ">
-      MIS
-      <span style="
-        font-family:'Great Vibes', cursive;
-        font-size:3.8em;
-        color:#725409;
-      ">Quince</span>
-      AÑOS
-    </p>
-
-    <!-- Nombre grande -->
-    <h1 class="name" style="
-      margin:.2rem 0 1.4rem;
-      color:#000;
-      text-shadow:0 0 6px rgba(255,255,255,.85);
-    ">
-      Naomy Isabella
-    </h1>
-
-    <!-- Fecha con pastilla -->
-    <p class="date" style="
-      display:inline-block;
-      margin:0 0 1.4rem;
-      padding:.35rem 1.6rem;
-      border-radius:999px;
-      background:rgba(0,0,0,.45);
-      color:#fff;
-      text-shadow:0 0 4px rgba(0,0,0,.9);
-      font-weight:600;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      font-size:.85rem;
-    ">
-      10 de enero · 2:30 p.m. · Jocotenango, Sacatepéquez
-    </p>
-
-    <!-- Botones -->
-    <div class="hero__cta">
-      <a class="btn" href="#rsvp">Confirmar asistencia</a>
-      <a class="btn" href="#programa">Ver programa</a>
+  <!-- ========= PORTADA ========= --> 
+  <header class="hero" id="inicio">
+    <div class="hero__bg">
+      <img
+        src="img/Portada de pagina.jpg"
+        alt="Mis quince años Naomy Isabella"
+        class="hero__image">
     </div>
-  </div>
 
-  <svg class="ornament ornament--tl" viewBox="0 0 100 100" aria-hidden="true">
-    <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="2"/>
-  </svg>
-  <svg class="ornament ornament--tr" viewBox="0 0 100 100" aria-hidden="true">
-    <rect x="10" y="10" width="80" height="80" fill="none" stroke="currentColor" stroke-width="2" rx="16"/>
-  </svg>
-  <svg class="ornament ornament--br" viewBox="0 0 100 100" aria-hidden="true">
-    <path d="M10 50 Q50 10 90 50 Q50 90 10 50Z" fill="none" stroke="currentColor" stroke-width="2"/>
-  </svg>
-</header>
+    <div class="hero__frame"></div>
 
-<!-- 🟣 CARRUSEL 3D NUEVO -->
-<section class="section container" id="galeria">
-  <h2>Galería</h2>
+    <div class="container center hero__content">
+      <p class="hero-topline">
+        MIS
+        <span class="hero-topline-script">Quince</span>
+        AÑOS
+      </p>
 
-  <div class="gallery-3d">
-    <div class="scene">
-      <div class="carousel3d">
-        <!-- Tus 6 fotos dentro de la carpeta img/ -->
-        <figure class="gallery-card" style="--i:0;">
-          <img src="img/naomy1.jpg.jpg" alt="Naomy 1">
-        </figure>
-        <figure class="gallery-card" style="--i:1;">
-          <img src="img/naomy2.jpg.jpg" alt="Naomy 2">
-        </figure>
-        <figure class="gallery-card" style="--i:2;">
-          <img src="img/naomy3.jpg.jpg" alt="Naomy 3">
-        </figure>
-        <figure class="gallery-card" style="--i:3;">
-          <img src="img/naomy4.jpg.jpg" alt="Naomy 4">
-        </figure>
-        <figure class="gallery-card" style="--i:4;">
-          <img src="img/naomy5.jpg.jpg" alt="Naomy 5">
-        </figure>
-        <figure class="gallery-card" style="--i:5;">
-          <img src="img/naomy6.jpg.jpg" alt="Naomy 6">
-        </figure>
+      <h1 class="name hero-name">
+        Naomy Isabella
+      </h1>
+
+      <p class="date hero-date-pill">
+        10 de enero · 2:30 p.m. · Jocotenango, Sacatepéquez
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn" href="#rsvp">Confirmar asistencia</a>
+        <a class="btn" href="#programa">Ver programa</a>
       </div>
     </div>
-  </div>
-</section>
-<!-- 🟣 FIN CARRUSEL 3D -->
 
-<main>
-  <section class="section container">
-    <div class="card">
-      <p class="brand">Faltan</p>
-      <div class="countdown__wrap" id="countdown">
-        <div class="cd__item"><div class="cd__value" id="d">00</div><div class="cd__label">Días</div></div>
-        <div class="cd__item"><div class="cd__value" id="h">00</div><div class="cd__label">Horas</div></div>
-        <div class="cd__item"><div class="cd__value" id="m">00</div><div class="cd__label">Minutos</div></div>
-        <div class="cd__item"><div class="cd__value" id="s">00</div><div class="cd__label">Segundos</div></div>
+    <svg class="ornament ornament--tl" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+    <svg class="ornament ornament--tr" viewBox="0 0 100 100" aria-hidden="true">
+      <rect x="10" y="10" width="80" height="80" fill="none" stroke="currentColor" stroke-width="2" rx="16"/>
+    </svg>
+    <svg class="ornament ornament--br" viewBox="0 0 100 100" aria-hidden="true">
+      <path d="M10 50 Q50 10 90 50 Q50 90 10 50Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+  </header>
+
+  <!-- 🟣 CARRUSEL 3D NUEVO -->
+  <section class="section container" id="galeria">
+    <h2>Galería</h2>
+
+    <div class="gallery-3d">
+      <div class="scene">
+        <div class="carousel3d">
+          <figure class="gallery-card" style="--i:0;">
+            <img src="img/naomy1.jpg.jpg" alt="Naomy 1">
+          </figure>
+          <figure class="gallery-card" style="--i:1;">
+            <img src="img/naomy2.jpg.jpg" alt="Naomy 2">
+          </figure>
+          <figure class="gallery-card" style="--i:2;">
+            <img src="img/naomy3.jpg.jpg" alt="Naomy 3">
+          </figure>
+          <figure class="gallery-card" style="--i:3;">
+            <img src="img/naomy4.jpg.jpg" alt="Naomy 4">
+          </figure>
+          <figure class="gallery-card" style="--i:4;">
+            <img src="img/naomy5.jpg.jpg" alt="Naomy 5">
+          </figure>
+          <figure class="gallery-card" style="--i:5;">
+            <img src="img/naomy6.jpg.jpg" alt="Naomy 6">
+          </figure>
+        </div>
       </div>
     </div>
   </section>
+  <!-- 🟣 FIN CARRUSEL 3D -->
 
-  <section class="section container" id="programa">
-    <h2>Programa</h2>
+  <main>
+    <!-- CONTADOR -->
+    <section class="section container section--countdown">
+      <div class="countdown-card">
+        <div class="count-banner">
+          <p class="count-title">Solo faltan:</p>
 
-    <div class="program-grid">
-      <!-- Tarjeta 1 -->
-      <article class="program-card">
-        <div class="program-icon">
-          <span>📖</span>
-        </div>
-        <p class="program-time">Servicio de acción de Gracias</p>
-        <p class="program-place">
-          Casa Santa Catalina<br>
-          Casa número 1,<br>
-          Residenciales La Asunción,<br>
-          Jocotenango, Sacatepéquez
-        </p>
-      </article>
+          <div class="count-content">
+            <img src="img/flores.png" alt="" class="count-flowers">
 
-      <!-- Tarjeta 2 -->
-      <article class="program-card">
-        <div class="program-icon">
-          <span>🍸</span>
-        </div>
-        <p class="program-time">Koktel</p>
-        <p class="program-place">
-          Casa Santa Catalina<br>
-          Casa número 1,<br>
-          Residenciales La Asunción,<br>
-          Jocotenango, Sacatepéquez
-        </p>
-      </article>
-
-      <!-- Tarjeta 3 -->
-      <article class="program-card">
-        <div class="program-icon">
-          <span>⭐</span>
-        </div>
-        <p class="program-time">Recepción</p>
-        <p class="program-place">
-          Casa Santa Catalina<br>
-          Casa número 1,<br>
-          Residenciales La Asunción,<br>
-          Jocotenango, Sacatepéquez
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section container" id="rsvp">
-    <div class="rsvp-grid">
-      <!-- TARJETA IZQUIERDA -->
-      <div class="cta-card">
-        <img class="rsvp-icon" width="56" height="56"
-             src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Antu_mail-message-new.svg"
-             alt="RSVP">
-
-        <p class="cta-text">
-          Por favor, confirmar tu asistencia haciendo click en el siguiente botón:
-        </p>
-
-        <!-- Botón que muestra/oculta el formulario -->
-        <button class="btn btn--large" id="toggleRsvp">Confirmar Asistencia</button>
-
-        <!-- Formulario oculto / visible -->
-        <div class="rsvp-form-wrap" id="rsvpFormBox">
-          <form class="form" id="rsvpForm">
-            <div class="field">
-              <label for="nombre">Nombre Completo</label>
-              <input class="input" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            <div id="countdown" class="count-main">
+              <span class="count-number" id="d">000</span>
+              <span class="count-sep">:</span>
+              <span class="count-number" id="h">00</span>
+              <span class="count-sep">:</span>
+              <span class="count-number" id="m">00</span>
+              <span class="count-sep">:</span>
+              <span class="count-number" id="s">00</span>
             </div>
 
-            <div class="field">
-              <label for="edad">Edad</label>
-              <input class="input" id="edad" name="edad" placeholder="Ej. 15" required>
+            <div class="count-labels">
+              <span>Día(s)</span>
+              <span>Hora(s)</span>
+              <span>Minuto(s)</span>
+              <span>Segundo(s)</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="field">
-              <label for="correo">Correo electrónico</label>
-              <input class="input" id="correo" name="correo" type="email"
-                     placeholder="tucorreo@ejemplo.com" required>
+    <!-- PROGRAMA -->
+    <section class="section container" id="programa">
+      <h2>Programa</h2>
+
+      <div class="program-grid">
+        <!-- Servicio de acción de Gracias -->
+        <article class="program-card">
+          <div class="program-icon">
+            <span>📖</span>
+          </div>
+          <p class="program-time">Servicio de acción de Gracias</p>
+          <p class="program-place">
+            Casa Santa Catalina<br>
+            Casa número 1,<br>
+            Residenciales La Asunción,<br>
+            Jocotenango, Sacatepéquez
+          </p>
+        </article>
+
+        <!-- Koktel -->
+        <article class="program-card">
+          <div class="program-icon">
+            <span>🍸</span>
+          </div>
+          <p class="program-time">Koktel</p>
+          <p class="program-place">
+            Casa Santa Catalina<br>
+            Casa número 1,<br>
+            Residenciales La Asunción,<br>
+            Jocotenango, Sacatepéquez
+          </p>
+        </article>
+
+        <!-- Recepción -->
+        <article class="program-card">
+          <div class="program-icon">
+            <span>⭐</span>
+          </div>
+          <p class="program-time">Recepción</p>
+          <p class="program-place">
+            Casa Santa Catalina<br>
+            Casa número 1,<br>
+            Residenciales La Asunción,<br>
+            Jocotenango, Sacatepéquez
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- DEDICATORIA / ORACIÓN -->
+    <section class="section" id="dedicatoria">
+      <div class="container">
+        <div class="blessing-card">
+
+          <div class="blessing-text">
+            <h2 class="blessing-heading">Con gratitud a Dios</h2>
+
+            <p class="blessing-body">
+              Mi DIOS, gracias por tus cuidados y provisión en mi niñez.<br>
+              Guía mis pensamientos, mis pasos y mis acciones en esta nueva etapa de mi vida.<br>
+              Gracias por permitirme llegar a este día tan especial.<br>
+              Te ruego por un futuro siempre contigo.
+            </p>
+
+            <p class="blessing-intro">
+              Por eso quiero compartir este día contigo y mis padres:
+            </p>
+
+            <div class="blessing-divider"></div>
+
+            <div class="blessing-parents">
+              <span class="parent-name">JAIME GOSALO GRAJEDA</span>
+              <span class="blessing-amp">&amp;</span>
+              <span class="parent-name">JACQUELINE GRAJEDA</span>
             </div>
+          </div>
 
-            <div class="field">
-              <label for="asistira">¿Asistirá?</label>
-              <select class="select" id="asistira" name="asistira" required>
-                <option value="">Selecciona...</option>
-                <option value="Sí, asistiré">Sí, asistiré</option>
-                <option value="No podré asistir">No podré asistir</option>
-              </select>
-            </div>
+          <!-- 🌸 flor decorativa abajo al centro -->
+          <img
+            class="blessing-flower"
+            src="img/Flores.png"
+            alt="Flor decorativa">
+        </div>
+      </div>
+    </section>
 
-            <button class="btn" type="submit">Enviar confirmación</button>
-            <p id="formMsg" class="center" aria-live="polite"></p>
-          </form>
+    <!-- CONFIRMACIÓN DE ASISTENCIA -->
+    <section class="section container" id="rsvp">
+      <div class="rsvp-grid">
+        <!-- Tarjeta izquierda: botón + formulario -->
+        <div class="cta-card">
+          <img class="rsvp-icon" width="56" height="56"
+               src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Antu_mail-message-new.svg"
+               alt="RSVP">
+
+          <p class="cta-text">
+            Por favor, confirmar tu asistencia haciendo click en el siguiente botón:
+          </p>
+
+          <!-- Botón que abre/cierra el formulario -->
+          <button class="btn btn--large" id="toggleRsvp" type="button">
+            Confirmar Asistencia
+          </button>
+
+          <!-- Formulario (se muestra/oculta con la clase .is-open) -->
+          <div class="rsvp-form-wrap" id="rsvpFormBox">
+            <form class="form" id="rsvpForm" novalidate>
+              <div class="field">
+                <label for="nombre">Nombre Completo</label>
+                <input class="input" id="nombre" name="nombre"
+                       placeholder="Tu nombre" autocomplete="name" required>
+              </div>
+
+              <div class="field">
+                <label for="edad">Edad</label>
+                <input class="input" id="edad" name="edad"
+                       placeholder="Ej. 15" required>
+              </div>
+
+              <div class="field">
+                <label for="correo">Correo electrónico</label>
+                <input class="input" id="correo" name="correo" type="email"
+                       placeholder="tucorreo@ejemplo.com" autocomplete="email" required>
+              </div>
+
+              <div class="field">
+                <label for="asistira">¿Asistirá?</label>
+                <select class="select" id="asistira" name="asistira" required>
+                  <option value="">Selecciona...</option>
+                  <option value="Sí, asistiré">Sí, asistiré</option>
+                  <option value="No podré asistir">No podré asistir</option>
+                </select>
+              </div>
+
+              <button class="btn btn--full" type="submit">
+                Enviar confirmación
+              </button>
+
+              <p id="formMsg" class="center" aria-live="polite"></p>
+            </form>
+
+            <!-- Enlace oculto para el mailto -->
+            <a id="btnSender" style="display:none;">enviar</a>
+          </div>
         </div>
 
-        <!-- Enlace oculto para enviar el correo con mailto -->
-        <a id="btnSender" style="display:none;">enviar</a>
+        <!-- Tarjeta derecha: información de regalo -->
+        <div class="gift-card">
+          <div class="rsvp-icon">🎁</div>
+          <p class="cta-text">
+            Tu presencia será el mejor regalo en este día tan especial.
+            Si deseas tener un detalle, podrás hacerlo con un obsequio en efectivo
+            durante la lluvia de sobres el día del evento.
+            <br><br>
+            ¡Gracias por tu cariño!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section class="section container" id="ubicacion">
+      <h2>Ubicación</h2>
+
+      <div class="map-card">
+        <!-- Capa invisible clickeable encima del mapa -->
+        <a
+          class="map-link-overlay"
+          href="https://maps.app.goo.gl/8TU6wenWuXAz2Jsr7?g_st=aw"
+          target="_blank"
+          rel="noopener"
+        >
+          Abrir en Google Maps
+        </a>
+
+        <!-- Mapa embebido solo para mostrar -->
+        <iframe
+          class="map-frame"
+          src="https://www.google.com/maps?q=Casa+Santa+Catalina+Jocotenango+Sacatep%C3%A9quez&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
 
-      <!-- TARJETA DERECHA (MENSAJE) -->
-      <div class="gift-card">
-        <div class="rsvp-icon">
-          🎁
-        </div>
-        <p class="cta-text">
-          Tu presencia será el mejor regalo en este día tan especial.
-          Si deseas tener un detalle, podrás hacerlo con un obsequio en efectivo
-          durante la lluvia de sobres el día del evento.
-          <br><br>
-          ¡Gracias por tu cariño!
-        </p>
+      <p class="map-hint">
+        Toca el mapa o este texto para abrir la ubicación en Google Maps
+      </p>
+    </section>
+
+    <!-- CÓDIGO DE VESTIMENTA -->
+    <section class="section container" id="dresscode">
+      <h2>Código de Vestimenta</h2>
+
+      <p class="dress-sub">
+        Formal. Estos colores están reservados para la festejada:
+      </p>
+
+      <div class="palette">
+        <span class="swatch" style="background:#c8ad7f;"></span>
+        <span class="swatch" style="background:#ffe5b4;"></span>
+        <span class="swatch" style="background:#f0afc4;"></span>
       </div>
+
+      <p class="dress-codes">
+        Código de colores: <code>#c8ad7f</code>, <code>#ffe5b4</code>, <code>#f0afc4</code>
+      </p>
+
+      <div class="dress-photo-wrap">
+        <img src="img/Imagen circulo.jpg"
+             alt="Naomy con el código de vestimenta"
+             class="dress-photo">
+      </div>
+    </section>
+
+
+    <!-- LIBRO DE MENSAJES -->
+    <section class="section container" id="mensajes">
+      <h2>Mensaje para Naomy</h2>
+
+      <p class="message-intro">
+        Utiliza el siguiente formulario para enviarme un mensaje que guardaré como
+        recuerdo de este día especial:
+      </p>
+
+      <div class="card message-card">
+        <form class="form" id="guestbookForm">
+          <div class="field">
+            <label for="m_nombre">Tu nombre</label>
+            <input class="input" id="m_nombre" placeholder="Nombre" required>
+          </div>
+
+          <div class="field">
+            <label for="m_texto">Tu mensaje</label>
+            <textarea
+              id="m_texto"
+              class="input input--textarea"
+              rows="4"
+              required
+              placeholder="Escríbeme unas palabras especiales…"></textarea>
+          </div>
+
+          <button class="btn btn--large" type="submit">
+            Enviar mensaje ✨
+          </button>
+        </form>
+
+        <div id="guestbookList" class="guestbook"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="section center">
+    <div class="container">
+      <p class="muted">Con cariño, familia y amigos de Naomy · 10 de enero</p>
     </div>
-  </section>
+  </footer>
 
-  <section class="section container" id="ubicacion">
-    <h2>Ubicación</h2>
-    <div class="card">
-      <p>Jocotenango, Sacatepéquez</p>
-      <p><a class="btn" target="_blank" rel="noopener" href="https://maps.google.com/?q=Jocotenango%2C+Sacatep%C3%A9quez">Abrir en Google Maps</a></p>
-    </div>
-  </section>
-
-  <section class="section container" id="mensajes">
-    <h2>Dedica un mensaje</h2>
-    <div class="card">
-      <form class="form" id="guestbookForm">
-        <div class="field">
-          <label for="m_nombre">Tu nombre</label>
-          <input class="input" id="m_nombre" required>
-        </div>
-        <div class="field">
-          <label for="m_texto">Mensaje</label>
-          <textarea id="m_texto" rows="3" required placeholder="Tus mejores deseos para Naomy"></textarea>
-        </div>
-        <button class="btn" type="submit">Publicar</button>
-      </form>
-      <div id="guestbookList" class="guestbook"></div>
-    </div>
-  </section>
-</main>
-
-<footer class="section center">
-  <div class="container">
-    <p class="muted">Con cariño, familia y amigos de Naomy · 10 de enero</p>
-  </div>
-</footer>
-
-<script src="./script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
+

@@ -1,4 +1,6 @@
-/* ====== Variables y base ====== */
+/* ============================================================
+   1. VARIABLES Y BASE
+   ============================================================ */
 :root{
   --bg:#F7E7CE; --card:#FFF9F3; --fg:#1F1A17; --muted:#6E5E4A;
   --accent:#B76E79; --accent-2:#5a4a21; --accent-soft:#E8B7B7;
@@ -6,27 +8,53 @@
   --radius:18px;
   --cards:6; /* número de fotos del carrusel 3D */
 }
-html{scroll-behavior:smooth}
-body{
-  margin:0; color:var(--fg);
-  font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;
-  background: radial-gradient(900px 520px at 80% -10%, rgba(183,110,121,.18), rgba(0,0,0,0) 60%),
-              radial-gradient(900px 700px at 0% 90%, rgba(232,183,183,.35), rgba(0,0,0,0) 65%),
-              linear-gradient(180deg, var(--card) 0%, var(--bg) 60%, #F1DCC1 100%);
-  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+
+html{
+  scroll-behavior:smooth;
 }
+
+/* base general para evitar desbordes en móvil */
+body{
+  margin:0;
+  color:var(--fg);
+  font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;
+  background:
+    radial-gradient(900px 520px at 80% -10%, rgba(183,110,121,.18), rgba(0,0,0,0) 60%),
+    radial-gradient(900px 700px at 0% 90%, rgba(218, 117, 117, 0.35), rgba(0,0,0,0) 65%),
+    linear-gradient(180deg, var(--card) 0%, var(--bg) 60%, #F1DCC1 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  max-width:100%;
+  overflow-x:hidden;
+  box-sizing:border-box;
+}
+
+*,*::before,*::after{
+  box-sizing:inherit;
+}
+
 h1,h2,h3,h4,h5,h6,.subtitle{
-  font-family:'Great Vibes', cursive; color:var(--accent);
-  font-size:clamp(2.4rem,5.5vw,4rem); font-weight:400;
-  text-shadow:0 0 1px rgba(0,0,0,.18); margin:.35rem 0 .5rem;
+  font-family:'Great Vibes', cursive;
+  color:var(--accent);
+  font-size:clamp(2.4rem,5.5vw,4rem);
+  font-weight:400;
+  text-shadow:0 0 1px rgba(0, 0, 0, 0.685);
+  margin:.35rem 0 .5rem;
   text-align:center;
 }
+
 .name{font-size:clamp(3.8rem,10vw,6.4rem)}
 .subtitle{font-size:clamp(2.4rem,6.5vw,4.2rem)}
-.container{width:min(1100px,92%);margin:0 auto}
+
+.container{
+  width:min(1100px,92%);
+  margin:0 auto;
+}
+
 .center{text-align:center}
 .muted{color:var(--muted)}
 
+/* ---------- Botones y chips ---------- */
 .btn{
   display:inline-flex;align-items:center;gap:.6rem;
   padding:.95rem 1.25rem;border-radius:999px;border:none;
@@ -36,20 +64,31 @@ h1,h2,h3,h4,h5,h6,.subtitle{
   transition:transform .12s ease, box-shadow .2s ease;
 }
 .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+
 .chip{
   display:inline-flex;align-items:center;gap:.5rem;
   padding:.35rem .7rem;border-radius:999px;font-size:.9rem;
   color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-soft));
 }
 
-/* ====== Hero con marco e imagen de portada ====== */
+/* ============================================================
+   2. HERO (PORTADA CON FOTO)
+   ============================================================ */
 .hero{
   position:relative;
-  min-height:88vh;
+  min-height:100vh;
   display:grid;
   place-items:center;
   text-align:center;
   overflow:hidden;
+  width:100%;
+}
+
+/* la .container del hero usa todo el ancho para que no quede columna crema */
+.hero > .container{
+  width:100%;
+  max-width:100%;
+  padding-inline:1.25rem;
 }
 
 /* fondo de hero con la imagen */
@@ -85,37 +124,6 @@ h1,h2,h3,h4,h5,h6,.subtitle{
   z-index:1;
 }
 
-/* títulos del hero más legibles */
-.hero .name,
-.hero .brand,
-.hero .subtitle{
-  color:#000;
-  text-shadow:
-    0 0 6px rgba(255,255,255,.9),
-    0 0 12px rgba(0,0,0,.6);
-}
-
-/* línea "MIS Quince AÑOS" */
-.hero-topline{
-  margin:0 0 .6rem;
-  font-family:'Playfair Display',serif;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  font-size:1.1rem;
-  color:#fff;
-  text-shadow:0 0 6px rgba(0,0,0,.7);
-}
-.hero-topline-script{
-  font-family:'Great Vibes',cursive;
-  font-size:1.5rem;
-  color:#f5d27a;
-}
-
-/* nombre grande */
-.hero-name{
-  margin:.2rem 0 1.4rem;
-}
-
 /* fecha en pastilla */
 .hero-date-pill,
 .date{
@@ -139,55 +147,162 @@ h1,h2,h3,h4,h5,h6,.subtitle{
   justify-content:center;
 }
 
-/* ====== Ornament ====== */
+/* ---------- Ornamentos ---------- */
 .ornament{position:absolute;pointer-events:none;color:rgba(199,163,75,1);opacity:.12}
 .ornament--tl{top:-40px;left:-20px;width:260px;transform:rotate(-8deg)}
 .ornament--tr{top:-30px;right:-10px;width:220px;transform:rotate(12deg)}
 .ornament--br{bottom:-40px;right:-20px;width:300px;transform:rotate(-6deg)}
 
-/* ====== Secciones y tarjetas ====== */
-.section{padding:clamp(2.2rem,4vw,3.2rem) 0}
-.card{
-  background:var(--card);border:1px solid rgba(31,26,23,.12);
-  border-radius:var(--radius);box-shadow:var(--shadow);
-  text-align:center;padding:1.75rem;
+/* ============================================================
+   3. SECCIONES GENERALES Y TARJETAS BÁSICAS
+   ============================================================ */
+.section{
+  padding:clamp(2.4rem,4.5vw,3.4rem) 0;
 }
 
-/* ====== Countdown ====== */
-.countdown__wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.card{
+  background:var(--card);
+  border:1px solid rgba(31,26,23,.12);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  text-align:center;
+  padding:1.75rem;
+}
+
+/* ============================================================
+   4. COUNTDOWN SIMPLE (cuadritos – por si lo usas)
+   ============================================================ */
+.countdown__wrap{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;
+}
 .cd__item{
-  background:#fff;border:1px solid rgba(31,26,23,.08);
-  border-radius:16px;padding:1.25rem 2rem;text-align:center;
+  background:#fff;
+  border:1px solid rgba(31,26,23,.08);
+  border-radius:16px;
+  padding:1.25rem 2rem;
+  text-align:center;
   box-shadow:0 6px 16px rgba(31,26,23,.06);
 }
 .cd__value{
   font-family:'Playfair Display',serif;
-  font-size:clamp(2.4rem,6vw,3.6rem);font-weight:700;
+  font-size:clamp(2.4rem,6vw,3.6rem);
+  font-weight:700;
 }
 .cd__label{
-  color:var(--muted);font-size:.78rem;
-  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);
+  font-size:.78rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
 }
 
-/* ====== Programa (antiguo timeline, por si lo usas) ====== */
-.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+/* ============================================================
+   5. PROGRAMA (ANTIGUO TIMELINE – si lo usas)
+   ============================================================ */
+.timeline{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.25rem;
+}
 .tl__item{
-  padding:1.25rem;border-radius:14px;
+  padding:1.25rem;
+  border-radius:14px;
   background:linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.4));
-  border:1px solid rgba(31,26,23,.12);text-align:center;
+  border:1px solid rgba(31,26,23,.12);
+  text-align:center;
 }
 .tl__title{
-  font-family:'Great Vibes',cursive;font-size:2.1rem;
-  margin:.3rem 0 .2rem;text-shadow:0 0 1px rgba(0,0,0,.18);
+  font-family:'Great Vibes',cursive;
+  font-size:2.1rem;
+  margin:.3rem 0 .2rem;
+  text-shadow:0 0 1px rgba(0,0,0,.18);
 }
-.tl__addr{color:var(--muted);font-size:1rem;line-height:1.6}
+.tl__addr{
+  color:var(--muted);
+  font-size:1rem;
+  line-height:1.6;
+}
 
-/* ====== RSVP NUEVO ====== */
+/* ============================================================
+   14. DEDICATORIA / ORACIÓN
+   ============================================================ */
+#dedicatoria{
+  padding-top:2.2rem;      /* menos espacio arriba */
+  padding-bottom:4rem;     /* menos espacio abajo */
+}
+
+#dedicatoria .blessing-card{
+  position:relative;
+  background:var(--card);
+  border-radius:32px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(31,26,23,.06);
+  padding:2.6rem 3rem 5rem;   /* menos padding, sobre todo abajo */
+  max-width:980px;
+  margin:1.5rem auto 0;       /* menos espacio sobre la tarjeta */
+  overflow:visible;
+}
+
+#dedicatoria .blessing-text{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  font-size:.98rem;
+  line-height:1.9;
+  color:var(--fg);
+  max-width:720px;
+  margin:0 auto;
+}
+
+#dedicatoria .blessing-intro{
+  margin-top:1.4rem;
+  font-size:.9rem;
+  color:var(--muted);
+}
+
+#dedicatoria .blessing-parents{
+  margin-top:1.4rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:.82rem;
+}
+#dedicatoria .blessing-parents span{
+  display:block;
+}
+#dedicatoria .blessing-amp{
+  margin:.25rem 0;
+}
+
+/* 🌸 Flor abajo y centrada */
+#dedicatoria .blessing-flower{
+  position:absolute;
+  left:50%;
+  bottom:-10.5rem;             /* más cerca de la tarjeta, sin tocar el texto */
+  transform:translateX(-50%);
+  width:520px;
+  max-width:100%;
+  height:auto;
+  pointer-events:none;
+  z-index:1;
+  opacity:.98;
+}
+
+/* ============================================================
+   6. RSVP (formulario + tarjeta de regalo)
+   ============================================================ */
+#rsvp{
+  padding-top:9rem;
+  padding-bottom:6rem;
+}
+
 .rsvp-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:1.8rem;
+  gap:2.6rem;
   align-items:stretch;
+  max-width:1100px;
+  margin:3rem auto 0;
 }
 
 .cta-card,
@@ -195,29 +310,30 @@ h1,h2,h3,h4,h5,h6,.subtitle{
   background:var(--card);
   border:1px solid rgba(31,26,23,.06);
   border-radius:24px;
-  box-shadow:0 16px 40px rgba(0,0,0,.06);
-  padding:2.4rem 2.6rem;
+  box-shadow:0 18px 46px rgba(0,0,0,.08);
+  padding:3.2rem 3.4rem;
   text-align:center;
+  font-size:1rem;
+  min-height:520px;
 }
 
-/* íconos de ambas tarjetas */
 .rsvp-icon,
 .rsvp-icon-main{
-  font-size:2.4rem;
-  margin-bottom:1.2rem;
-  opacity:.85;
+  font-size:2.6rem;
+  margin-bottom:1.3rem;
+  opacity:.9;
 }
 
 .cta-text{
   color:var(--muted);
-  font-size:.98rem;
-  line-height:1.6;
-  max-width:32rem;
+  font-size:1.02rem;
+  line-height:1.8;
+  max-width:34rem;
   margin:0 auto 1.8rem;
 }
 
 .btn--large{
-  padding:0.9rem 2.6rem;
+  padding:1rem 2.8rem;
   border-radius:999px;
   font-weight:600;
   margin-bottom:1.8rem;
@@ -226,7 +342,7 @@ h1,h2,h3,h4,h5,h6,.subtitle{
 /* toggle formulario */
 .rsvp-form-wrap{
   display:none;
-  margin-top:1.25rem;
+  margin-top:1.4rem;
 }
 .rsvp-form-wrap.is-open{
   display:block;
@@ -238,6 +354,11 @@ h1,h2,h3,h4,h5,h6,.subtitle{
   flex-direction:column;
   gap:1rem;
 }
+.rsvp-form-wrap .form{
+  max-width:440px;
+  margin:0 auto;
+}
+
 .field{
   text-align:left;
   font-size:.9rem;
@@ -252,7 +373,7 @@ h1,h2,h3,h4,h5,h6,.subtitle{
 .input,
 .select{
   width:100%;
-  padding:.7rem .85rem;
+  padding:.75rem .9rem;
   border-radius:10px;
   border:1px solid rgba(31,26,23,.12);
   font-family:inherit;
@@ -269,55 +390,154 @@ h1,h2,h3,h4,h5,h6,.subtitle{
 .btn--full{
   width:100%;
   justify-content:center;
-  margin-top:.4rem;
+  margin-top:.6rem;
 }
 
-/* ====== Dress code ====== */
-.palette{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap}
+/* ============================================================
+   7. DRESS CODE
+   ============================================================ */
+.palette{
+  display:flex;
+  justify-content:center;
+  gap:.8rem;
+  flex-wrap:wrap;
+}
 .swatch{
-  width:38px;height:38px;border-radius:10px;
-  border:1px solid rgba(31,26,23,.12);box-shadow:var(--shadow);
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  border:1px solid rgba(31,26,23,.12);
+  box-shadow:var(--shadow);
 }
 
-/* ====== Guestbook ====== */
-.guestbook{margin-top:1rem;display:grid;gap:.75rem}
+#dresscode{
+  padding-top:4rem;
+  padding-bottom:4rem;
+}
+
+#dresscode h2{
+  font-size:clamp(3.8rem, 6vw, 5.2rem);
+  margin-bottom:1rem;
+}
+
+.dress-sub{
+  text-align:center;
+  font-size:1.2rem;
+  color:var(--muted);
+  margin:0 0 1.7rem;
+}
+
+.dress-codes{
+  text-align:center;
+  font-size:1rem;
+  color:var(--muted);
+  margin:.8rem 0 2rem;
+}
+.dress-codes code{
+  font-family:monospace;
+}
+
+#dresscode .palette{
+  margin-bottom:1.6rem;
+}
+#dresscode .swatch{
+  width:56px !important;
+  height:56px !important;
+}
+
+.dress-photo-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:.5rem;
+}
+
+#dresscode .dress-photo{
+  width:420px !important;
+  height:420px !important;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 24px 52px rgba(0,0,0,.18);
+}
+
+/* ============================================================
+   8. GUESTBOOK
+   ============================================================ */
+.guestbook{
+  margin-top:1rem;
+  display:grid;
+  gap:.75rem;
+}
 .guestbook .item{
-  background:#fff;border:1px solid rgba(31,26,23,.08);
-  border-radius:12px;padding:.9rem 1rem;
+  background:#fff;
+  border:1px solid rgba(31,26,23,.08);
+  border-radius:12px;
+  padding:.9rem 1rem;
 }
 .guestbook .item .who{font-weight:600}
 .guestbook .item .text{margin:.25rem 0 0}
 
-/* ====== Galería carrusel 3D ====== */
+/* ============================================================
+   8bis. SECCIÓN MENSAJES
+   ============================================================ */
+#mensajes h2{
+  font-size:clamp(3rem, 5vw, 4.2rem);
+  margin-bottom:1rem;
+}
+
+.message-intro{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 2rem;
+  font-size:.98rem;
+  color:var(--muted);
+}
+
+.message-card{
+  max-width:1100px;
+  margin:0 auto;
+  padding:3rem 3.4rem;
+}
+
+#mensajes .form{
+  max-width:720px;
+  margin:0 auto 1.8rem;
+}
+#mensajes .field{
+  margin-bottom:1.4rem;
+}
+
+.input--textarea{
+  resize:vertical;
+  min-height:150px;
+}
+
+/* ============================================================
+   9. GALERÍA – CARRUSEL 3D
+   ============================================================ */
 .gallery-3d{
   margin-top:0;
+  padding-top:9.2rem;
+  padding-bottom:0.8rem;
   display:flex;
   justify-content:center;
 }
 
 #galeria h2{
-  font-size:clamp(10.8rem, 8vw, 5.8rem);
-  margin:0 0 9.6rem;
-}
-
-#galeria .muted{
-  display:block;
-  font-size:1.1rem;
-  letter-spacing:.04em;
-  color:#3b3027;
-  margin-top:0;
-  margin-bottom:2.4rem;
+  font-size:clamp(2.6rem, 6vw, 4.5rem);
+  margin:0 0 1.8rem;
+  position:relative;
+  z-index:2;
 }
 
 .scene{
   width:100%;
-  max-width:1100px;
-  height:600px;
+  max-width:1050px;
+  height:510px;
   display:flex;
   justify-content:center;
   align-items:center;
   perspective:1200px;
-  margin:1.5rem auto 3rem;
+  margin:0 auto 3.5rem;
 }
 
 .carousel3d{
@@ -337,75 +557,300 @@ h1,h2,h3,h4,h5,h6,.subtitle{
   transform-style:preserve-3d;
   transform:
     rotateY(calc((360deg / var(--cards)) * var(--i)))
-    translateZ(400px);
+    translateZ(370px);
 }
 
 .gallery-card img{
   height:100%;
-  max-height:560px;
+  max-height:470px;
   width:auto;
-  max-width:400px;
+  max-width:350px;
   display:block;
   object-fit:cover;
   border-radius:16px;
   box-shadow:0 8px 20px rgba(0,0,0,.45);
 }
 
-/* ====== PROGRAMA TIPO TRES TARJETAS ====== */
-#programa h2{
-  font-size:clamp(3.2rem, 6vw, 4.5rem);
-  margin-bottom:2rem;
-}
-.program-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1.8rem;
-}
-.program-card{
-  background:var(--card);
-  border-radius:18px;
-  box-shadow:var(--shadow);
-  border:1px solid rgba(31,26,23,.08);
-  padding:2.2rem 2rem;
-  text-align:center;
-}
-.program-icon span{
-  font-size:2.6rem;
-  display:inline-block;
-  margin-bottom:1.2rem;
-}
-.program-time{
-  font-family:'Great Vibes',cursive;
-  font-size:2.4rem;
-  margin:.2rem 0 .7rem;
-  color:var(--accent);
-}
-.program-place{
-  color:var(--muted);
-  font-size:.95rem;
-  line-height:1.7;
-}
-
-/* Animación carrusel */
 @keyframes giroGaleria{
   from{ transform:rotateY(0deg); }
   to{   transform:rotateY(-360deg); }
 }
 
-/* ====== Responsive ====== */
-@media (max-width:860px){
+/* ============================================================
+   10. PROGRAMA (TRES TARJETAS)
+   ============================================================ */
+#programa{
+  padding:clamp(3rem,6vw,4.8rem) 0 4.2rem;
+}
+
+#programa h2{
+  font-size:clamp(3.4rem, 5.4vw, 4.6rem);
+  margin-bottom:2.4rem;
+}
+
+.program-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2.4rem;
+}
+
+.program-card{
+  background:var(--card);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(31,26,23,.08);
+  padding:2.6rem 2.8rem;
+  text-align:center;
+  font-size:1rem;
+}
+
+.program-icon span{
+  font-size:2.4rem;
+  display:inline-block;
+  margin-bottom:1.2rem;
+}
+
+.program-time{
+  font-family:'Great Vibes',cursive;
+  font-size:2.4rem;
+  margin:.2rem 0 .8rem;
+  color:var(--accent);
+}
+
+.program-place{
+  color:var(--muted);
+  font-size:1rem;
+  line-height:1.8;
+}
+
+/* ============================================================
+   11. UBICACIÓN
+   ============================================================ */
+#ubicacion h2{
+  font-size:clamp(3rem, 5vw, 4.2rem);
+  margin-bottom:1.8rem;
+}
+
+.map-card{
+  background:var(--card);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(31,26,23,.06);
+  overflow:hidden;
+  max-width:1100px;
+  margin:0 auto;
+  position:relative;
+}
+
+.map-frame{
+  display:block;
+  width:100%;
+  height:430px;
+  border:0;
+}
+
+.map-link-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  background:transparent;
+  text-indent:-9999px;
+  cursor:pointer;
+}
+
+.map-hint{
+  text-align:center;
+  margin-top:1.2rem;
+  font-size:.95rem;
+  color:var(--muted);
+}
+
+/* ============================================================
+   12. CONTADOR ROSA
+   ============================================================ */
+.section--countdown{
+  padding-top:0;
+  margin-top:3rem;
+  display:flex;
+  justify-content:center;
+  position:relative;
+}
+
+.countdown-card{
+  max-width:980px;
+  width:100%;
+  margin:0 auto;
+  background:transparent;
+  border:none;
+  box-shadow:none;
+}
+
+/* más padding abajo para que quepa la flor */
+.count-banner{
+  background:#F7B3CF;
+  border-radius:32px;
+  box-shadow:var(--shadow);
+  padding:1.8rem 3rem 4.8rem;
+}
+
+.count-title{
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  font-size:2rem;
+  margin:0 0 1.4rem;
+  color:#1F1A17;
+}
+
+.count-content{
+  position:relative;
+}
+
+/* 🌸 Flor abajo, saliendo de la tarjeta (como la dedicatoria) */
+.count-flowers{
+  position:absolute;
+  left:50%;
+  bottom:-13.6rem;
+  transform:translateX(-50%);
+  width:520px;
+  max-width:100%;
+  height:auto;
+  z-index:1;
+  pointer-events:none;
+}
+
+.count-main{
+  position:relative;
+  z-index:3;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:.5rem;
+  font-family:'Playfair Display', serif;
+  font-size:6.2rem;
+  color:#000;
+  margin-top:-1.2rem;
+}
+.count-number{
+  min-width:3.3ch;
+  text-align:center;
+}
+.count-sep{
+  font-size:2.6rem;
+  margin:0 .1rem .1rem;
+}
+
+.count-labels{
+  position:relative;
+  z-index:3;
+  display:flex;
+  justify-content:center;
+  gap:4.2rem;
+  margin-top:-0.1rem;
+  font-size:.95rem;
+  color:#1F1A17;
+}
+.count-labels span{
+  display:inline-block;
+  min-width:9.2rem;
+  text-align:center;
+}
+
+/* ============================================================
+   13. RESPONSIVE
+   ============================================================ */
+@media (max-width:900px){
   .program-grid{
     grid-template-columns:1fr;
   }
   .rsvp-grid{
     grid-template-columns:1fr;
   }
+
+  /* carrusel más pequeño en tablets */
   .scene{
-    max-width:100%;
     height:420px;
-    margin:1.5rem auto 2.5rem;
+  }
+  .gallery-card{
+    transform:
+      rotateY(calc((360deg / var(--cards)) * var(--i)))
+      translateZ(280px);
   }
   .gallery-card img{
-    max-height:340px;
+    max-height:360px;
+    max-width:260px;
+  }
+}
+
+@media (max-width:700px){
+  #dedicatoria{
+    padding-top:1.4rem;
+    padding-bottom:2.6rem;        /* casi sin hueco crema debajo */
+  }
+  #dedicatoria .blessing-card{
+    padding:2rem 1.6rem 3.2rem;   /* tarjeta más compacta */
+    margin-top:1rem;
+  }
+  #dedicatoria .blessing-flower{
+    width:260px;
+    bottom:-3.2rem;               /* baja la flor para que no toque las letras */
+  }
+}
+
+@media (max-width:600px){
+  /* hero cómodo en móvil */
+  .hero > .container{
+    padding-inline:1rem;
+  }
+
+  /* carrusel 3D más chico en móvil */
+  .gallery-3d{
+    padding-top:4.5rem;
+  }
+  .scene{
+    height:320px;
+    perspective:800px;
+    margin-bottom:2.2rem;
+  }
+  .gallery-card{
+    transform:
+      rotateY(calc((360deg / var(--cards)) * var(--i)))
+      translateZ(220px);
+  }
+  .gallery-card img{
+    max-height:260px;
+    max-width:190px;
+  }
+
+  /* contador rosa más compacto */
+  .count-banner{
+    padding:1.6rem 1.4rem 4rem;   /* más espacio abajo para la flor */
+  }
+  .count-title{
+    font-size:1.6rem;
+  }
+  .count-main{
+    font-size:2rem;
+  }
+  .count-number{
+    min-width:2.3ch;
+  }
+  .count-flowers{
+    width:320px;        /* flor un poco más grande */
+    bottom:-9.4rem;     /* la baja para que salga como en la imagen 2 */
+  }
+  .count-labels{
+    gap:1.2rem;
+    font-size:.78rem;
+  }
+
+  /* RSVP y tarjetas más bajitas para quitar tanto espacio vacío */
+  #rsvp{
+    padding-top:3rem;   /* antes 5rem: ahora más cerca de la dedicatoria */
+    padding-bottom:4rem;
+  }
+  .cta-card,
+  .gift-card{
+    padding:2.2rem 1.8rem;
+    min-height:auto;
   }
 }
