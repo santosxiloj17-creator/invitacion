@@ -228,8 +228,8 @@ h1,h2,h3,h4,h5,h6,.subtitle{
    14. DEDICATORIA / ORACIÓN
    ============================================================ */
 #dedicatoria{
-  padding-top:2.2rem;      /* menos espacio arriba */
-  padding-bottom:4rem;     /* menos espacio abajo */
+  padding-top:3.5rem;
+  padding-bottom:8rem;
 }
 
 #dedicatoria .blessing-card{
@@ -238,9 +238,9 @@ h1,h2,h3,h4,h5,h6,.subtitle{
   border-radius:32px;
   box-shadow:var(--shadow);
   border:1px solid rgba(31,26,23,.06);
-  padding:2.6rem 3rem 5rem;   /* menos padding, sobre todo abajo */
+  padding:3rem 4rem 7rem;
   max-width:980px;
-  margin:1.5rem auto 0;       /* menos espacio sobre la tarjeta */
+  margin:3rem auto 0;
   overflow:visible;
 }
 
@@ -278,9 +278,9 @@ h1,h2,h3,h4,h5,h6,.subtitle{
 #dedicatoria .blessing-flower{
   position:absolute;
   left:50%;
-  bottom:-10.5rem;             /* más cerca de la tarjeta, sin tocar el texto */
+  bottom:-15rem;
   transform:translateX(-50%);
-  width:520px;
+  width:800px;
   max-width:100%;
   height:auto;
   pointer-events:none;
@@ -666,18 +666,18 @@ h1,h2,h3,h4,h5,h6,.subtitle{
 }
 
 /* ============================================================
-   12. CONTADOR ROSA
+   12. CONTADOR ROSA (ajustado escritorio + móvil)
    ============================================================ */
 .section--countdown{
   padding-top:0;
-  margin-top:3rem;
+  margin-top:2.5rem;
   display:flex;
   justify-content:center;
   position:relative;
 }
 
 .countdown-card{
-  max-width:980px;
+  max-width:900px;
   width:100%;
   margin:0 auto;
   background:transparent;
@@ -685,19 +685,18 @@ h1,h2,h3,h4,h5,h6,.subtitle{
   box-shadow:none;
 }
 
-/* más padding abajo para que quepa la flor */
 .count-banner{
   background:#F7B3CF;
   border-radius:32px;
   box-shadow:var(--shadow);
-  padding:1.8rem 3rem 4.8rem;
+  padding:1.6rem 2.4rem 3.2rem;
 }
 
 .count-title{
   text-align:center;
   font-family:'Playfair Display', serif;
-  font-size:2rem;
-  margin:0 0 1.4rem;
+  font-size:1.9rem;
+  margin:0 0 1rem;
   color:#1F1A17;
 }
 
@@ -705,13 +704,13 @@ h1,h2,h3,h4,h5,h6,.subtitle{
   position:relative;
 }
 
-/* 🌸 Flor abajo, saliendo de la tarjeta (como la dedicatoria) */
+/* 🌸 Flor abajo, saliendo de la tarjeta */
 .count-flowers{
   position:absolute;
   left:50%;
-  bottom:-13.6rem;
+  bottom:-10.8rem;
   transform:translateX(-50%);
-  width:520px;
+  width:460px;
   max-width:100%;
   height:auto;
   z-index:1;
@@ -724,19 +723,19 @@ h1,h2,h3,h4,h5,h6,.subtitle{
   display:flex;
   justify-content:center;
   align-items:flex-end;
-  gap:.5rem;
+  gap:.4rem;
   font-family:'Playfair Display', serif;
-  font-size:6.2rem;
+  font-size:4.2rem;
   color:#000;
-  margin-top:-1.2rem;
+  margin-top:-.4rem;
 }
 .count-number{
-  min-width:3.3ch;
+  min-width:2.6ch;
   text-align:center;
 }
 .count-sep{
-  font-size:2.6rem;
-  margin:0 .1rem .1rem;
+  font-size:2rem;
+  margin:0 .08rem .06rem;
 }
 
 .count-labels{
@@ -744,14 +743,14 @@ h1,h2,h3,h4,h5,h6,.subtitle{
   z-index:3;
   display:flex;
   justify-content:center;
-  gap:4.2rem;
-  margin-top:-0.1rem;
-  font-size:.95rem;
+  gap:2rem;
+  margin-top:.25rem;
+  font-size:.9rem;
   color:#1F1A17;
 }
 .count-labels span{
   display:inline-block;
-  min-width:9.2rem;
+  min-width:6rem;
   text-align:center;
 }
 
@@ -783,23 +782,40 @@ h1,h2,h3,h4,h5,h6,.subtitle{
 
 @media (max-width:700px){
   #dedicatoria{
-    padding-top:1.4rem;
-    padding-bottom:2.6rem;        /* casi sin hueco crema debajo */
+    padding-bottom:4rem;
   }
   #dedicatoria .blessing-card{
-    padding:2rem 1.6rem 3.2rem;   /* tarjeta más compacta */
-    margin-top:1rem;
+    padding:2.4rem 1.8rem 3.5rem;
+    margin-top:2rem;
   }
   #dedicatoria .blessing-flower{
     width:260px;
-    bottom:-3.2rem;               /* baja la flor para que no toque las letras */
+    bottom:-1.5rem;
   }
 }
 
 @media (max-width:600px){
-  /* hero cómodo en móvil */
+  /* hero cómodo en móvil + texto menos separado */
   .hero > .container{
     padding-inline:1rem;
+  }
+
+  /* primer texto "MIS QUINCE AÑOS" */
+  .hero > .container p:first-child{
+    letter-spacing:.08em !important;
+    font-size:1.2rem !important;
+  }
+
+  /* nombre más pequeño */
+  .hero .name{
+    font-size:2.6rem;
+    margin:.2rem 0 1rem;
+  }
+
+  /* fecha un poco más pequeña */
+  .hero .date{
+    font-size:.72rem;
+    padding:.3rem 1.2rem;
   }
 
   /* carrusel 3D más chico en móvil */
@@ -821,36 +837,96 @@ h1,h2,h3,h4,h5,h6,.subtitle{
     max-width:190px;
   }
 
-  /* contador rosa más compacto */
+  /* contador rosa más compacto en CELULAR */
   .count-banner{
-    padding:1.6rem 1.4rem 4rem;   /* más espacio abajo para la flor */
+    padding:1.4rem 1.2rem 2.4rem;
   }
   .count-title{
-    font-size:1.6rem;
+    font-size:1.45rem;
+    margin-bottom:.5rem;
   }
   .count-main{
-    font-size:2rem;
+    font-size:2.1rem;
+    margin-top:0;
+    gap:.25rem;
   }
   .count-number{
-    min-width:2.3ch;
+    min-width:2.2ch;
   }
   .count-flowers{
-    width:320px;        /* flor un poco más grande */
-    bottom:-9.4rem;     /* la baja para que salga como en la imagen 2 */
+    width:260px;
+    bottom:-5rem;
   }
   .count-labels{
-    gap:1.2rem;
+    gap:.9rem;
     font-size:.78rem;
+    margin-top:.3rem;
+  }
+  .count-labels span{
+    min-width:4.6rem;
   }
 
-  /* RSVP y tarjetas más bajitas para quitar tanto espacio vacío */
+  /* RSVP y tarjetas más bajitas */
   #rsvp{
-    padding-top:3rem;   /* antes 5rem: ahora más cerca de la dedicatoria */
+    padding-top:5rem;
     padding-bottom:4rem;
   }
   .cta-card,
   .gift-card{
     padding:2.2rem 1.8rem;
     min-height:auto;
+  }
+}
+
+/* ============================================================
+   13.1. EXTRA PARA TELÉFONOS MUY ESTRECHOS (≤ 400px)
+   ============================================================ */
+@media (max-width:400px){
+  .hero .name{
+    font-size:2.3rem;          /* baja un poquito más el nombre */
+  }
+  .hero > .container p:first-child{
+    font-size:1.05rem !important;
+    letter-spacing:.06em !important;
+  }
+  .count-main{
+    font-size:1.9rem;          /* números un poco más pequeños */
+  }
+  .count-flowers{
+    width:230px;
+    bottom:-4.4rem;
+  }
+}
+
+/* ============================================================
+   14. ESCRITORIO GRANDE (≥ 1024px)
+   Ajustes de tamaño carrusel + contador
+   - Si quieres TODO más GRANDE, SUBE estos valores.
+   - Si lo quieres más PEQUEÑO, BÁJALOS.
+   ============================================================ */
+@media (min-width:1024px){
+
+  /* Carrusel un poco más grande */
+  .scene{
+    height:460px;            /* ← AUMENTA para hacer el carrusel más ALTO */
+  }
+
+  .gallery-card img{
+    max-height:430px;        /* ← AUMENTA para fotos más GRANDES */
+    max-width:320px;
+  }
+
+  /* Contador más ancho */
+  .countdown-card{
+    max-width:960px;         /* ← AUMENTA para que el contador ocupe más ancho */
+  }
+
+  .count-main{
+    font-size:4.8rem;        /* ← AUMENTA para números más GRANDES */
+  }
+
+  .count-flowers{
+    width:520px;             /* ← AUMENTA para flor más grande */
+    bottom:-11.2rem;         /* ← ajusta para subir/bajar la flor */
   }
 }
